@@ -1,0 +1,54 @@
+# MikataArmController CMake config file
+#
+# This file sets the following variables:
+# MikataArmController_FOUND - Always TRUE.
+# MikataArmController_INCLUDE_DIRS - Directories containing the MikataArmController include files.
+# MikataArmController_IDL_DIRS - Directories containing the MikataArmController IDL files.
+# MikataArmController_LIBRARIES - Libraries needed to use MikataArmController.
+# MikataArmController_DEFINITIONS - Compiler flags for MikataArmController.
+# MikataArmController_VERSION - The version of MikataArmController found.
+# MikataArmController_VERSION_MAJOR - The major version of MikataArmController found.
+# MikataArmController_VERSION_MINOR - The minor version of MikataArmController found.
+# MikataArmController_VERSION_REVISION - The revision version of MikataArmController found.
+# MikataArmController_VERSION_CANDIDATE - The candidate version of MikataArmController found.
+
+message(STATUS "Found MikataArmController-@PROJECT_VERSION@")
+set(MikataArmController_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(MikataArmController_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(MikataArmController_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(MikataArmController_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(MikataArmController_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(MikataArmController_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(MikataArmController_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(MikataArmController_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(MikataArmController_VERSION @PROJECT_VERSION@)
+set(MikataArmController_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(MikataArmController_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(MikataArmController_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(MikataArmController_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+
