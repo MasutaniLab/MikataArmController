@@ -1,9 +1,6 @@
-﻿#include "MikataArmController.h"
-#define setup() MikataArmController::setup()
-#define loop() MikataArmController::loop()
-//#include "example0.cpp"
-//#include "example.cpp"
-//#include "example.cpp"
-//#include "example.cpp"
-//#include "example.cpp"
+﻿//#include "example0.cpp"
+//#include "example1.cpp"
+//#include "example2.cpp"
+//#include "example3.cpp"
+//#include "example4.cpp"
 #include "example5.cpp"

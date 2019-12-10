@@ -166,4 +166,7 @@ set(CPACK_PROJECT_CONFIG_FILE ${cpack_options})
 include(${CPACK_PROJECT_CONFIG_FILE})
 include(CPack)
 
-add_custom_target(Practice SOURCES src/example0.cpp src/example5.cpp)
+add_custom_target(Practice SOURCES 
+  src/example0.cpp
+  src/example1.cpp
+  src/example5.cpp)

@@ -1,6 +1,8 @@
-﻿#include "MikataArmController.h"
-
+﻿#include "practice.h"
+#include <iostream>
 #include <cmath>
+#include <algorithm>
+#include <Windows.h>
 using namespace std;
 
 const double ArmRange = 0.4;//アームが届く距離[m] 
